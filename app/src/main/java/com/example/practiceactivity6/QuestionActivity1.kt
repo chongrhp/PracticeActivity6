@@ -32,11 +32,19 @@ class QuestionActivity1 : AppCompatActivity() {
         }
 
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+
+            when(checkedId){
+                R.id.radioAnswer1 -> answerkey[1] = binding.radioAnswer1.text.toString()
+                R.id.radioAnswer2 -> answerkey[1] = binding.radioAnswer2.text.toString()
+                R.id.radioAnswer3 -> answerkey[1] = binding.radioAnswer3.text.toString()
+                R.id.radioAnswer4 -> answerkey[1] = binding.radioAnswer4.text.toString()
+            }
+/*
             if(binding.radioAnswer1.isChecked) answerkey[1] = binding.radioAnswer1.text.toString()
             if(binding.radioAnswer2.isChecked) answerkey[1] = binding.radioAnswer2.text.toString()
             if(binding.radioAnswer3.isChecked) answerkey[1] = binding.radioAnswer3.text.toString()
             if(binding.radioAnswer4.isChecked) answerkey[1] = binding.radioAnswer4.text.toString()
-
+*/
             if(answerkey[1] == resultkey[1]) binding.txtYourAnswer.text = "You are correct!"
             else binding.txtYourAnswer.text = "The correct answer is ${resultkey[1]}"
         }

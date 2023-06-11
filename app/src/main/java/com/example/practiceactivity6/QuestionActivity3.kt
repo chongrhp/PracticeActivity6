@@ -30,10 +30,13 @@ class QuestionActivity3 : AppCompatActivity() {
         }
 
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            if(binding.radioAnswer1.isChecked) answerkey[3] = binding.radioAnswer1.text.toString()
-            if(binding.radioAnswer2.isChecked) answerkey[3] = binding.radioAnswer2.text.toString()
-            if(binding.radioAnswer3.isChecked) answerkey[3] = binding.radioAnswer3.text.toString()
-            if(binding.radioAnswer4.isChecked) answerkey[3] = binding.radioAnswer4.text.toString()
+
+            when(checkedId){
+                R.id.radioAnswer1 -> answerkey[3] = binding.radioAnswer1.text.toString()
+                R.id.radioAnswer2 -> answerkey[3] = binding.radioAnswer2.text.toString()
+                R.id.radioAnswer3 -> answerkey[3] = binding.radioAnswer3.text.toString()
+                R.id.radioAnswer4 -> answerkey[3] = binding.radioAnswer4.text.toString()
+            }
 
             if(answerkey[3] == resultkey[3]) binding.txtYourAnswer.text = "You are correct!"
             else binding.txtYourAnswer.text = "The correct answer is ${resultkey[3]}"
